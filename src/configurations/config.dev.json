@@ -1,6 +1,6 @@
 {
     "database": {
-        "connectionString": "mongodb://localhost:27017/taskdb-dev"
+        "connectionString": "mongodb://localhost:27017/rdu-db"
     },
     "server": {
         "port": 5000,

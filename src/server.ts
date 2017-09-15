@@ -4,6 +4,7 @@ import { IPlugin } from "./plugins/interfaces";
 import { IServerConfigurations } from "./configurations";
 import * as Tasks from "./tasks";
 import * as Users from "./users";
+import * as Home from "./home";
 import { IDatabase } from "./database";
 
 
@@ -46,6 +47,7 @@ export function init(configs: IServerConfigurations, database: IDatabase): Promi
             console.log('Register Routes');
             Tasks.init(server, configs, database);
             Users.init(server, configs, database);
+            Home.init(server, configs);
             console.log('Routes registered sucessfully.');
 
             resolve(server);
