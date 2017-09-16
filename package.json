@@ -25,25 +25,6 @@
     "postinstall": "gulp build"
   },
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "boom": "^4.3.1",
-    "fs": "0.0.1-security",
-    "good": "^7.2.0",
-    "good-console": "^6.4.0",
-    "good-squeeze": "^5.0.2",
-    "hapi": "^16.1.1",
-    "hapi-auth-jwt2": "^7.2.4",
-    "hapi-swagger": "^7.7.0",
-    "inert": "^4.2.0",
-    "joi": "^10.5.0",
-    "jsonwebtoken": "^7.4.1",
-    "mongoose": "^4.10.0",
-    "nconf": "^0.8.4",
-    "nodemon": "^1.12.1",
-    "path": "^0.12.7",
-    "vision": "^4.1.1"
-  },
-  "devDependencies": {
     "@types/bcryptjs": "^2.4.0",
     "@types/boom": "^4.3.2",
     "@types/chai": "^3.5.2",
@@ -55,7 +36,14 @@
     "@types/nconf": "0.0.34",
     "@types/node": "^7.0.21",
     "@types/sinon": "^2.2.2",
+
+    "bcryptjs": "^2.4.3",
+    "boom": "^4.3.1",
     "chai": "^3.5.0",
+    "fs": "0.0.1-security",
+    "good": "^7.2.0",
+    "good-console": "^6.4.0",
+    "good-squeeze": "^5.0.2",
     "gulp": "^3.9.1",
     "gulp-env": "^0.4.0",
     "gulp-mocha": "^4.3.1",
@@ -63,13 +51,24 @@
     "gulp-shell": "^0.6.3",
     "gulp-tslint": "^8.0.0",
     "gulp-typescript": "^3.2.2",
+    "hapi": "^16.1.1",
+    "hapi-auth-jwt2": "^7.2.4",
+    "hapi-swagger": "^7.7.0",
+    "inert": "^4.2.0",
+    "joi": "^10.5.0",
+    "jsonwebtoken": "^7.4.1",
     "mocha": "^3.4.1",
-    "node": "0.0.0",
+    "mongoose": "^4.10.0",
+    "nconf": "^0.8.4",
+    "nodemon": "^1.12.1",
+    "path": "^0.12.7",
     "sinon": "^2.2.0",
     "tslint": "^5.2.0",
-    "typescript": "^2.5.2"
+    "typescript": "^2.5.2",
+    "vision": "^4.1.1"
   },
   "engines": {
-    "node": ">=7.6.0"
+    "node": ">=7.6.0",
+    "yarn": ">=1.0.0"
   }
 }
