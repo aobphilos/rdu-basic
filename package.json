@@ -17,7 +17,7 @@
     "tsc-watch": "tsc -w",
     "build": "gulp build",
     "clean": "gulp clean",
-    "start": "node build/src/index.js",
+    "start": "npm run build & node build/src/index.js",
     "setup": "npm install & typings install",
     "test": "gulp test",
     "watch": "nodemon --watch build/src build/src/index.js"
@@ -37,7 +37,7 @@
     "jsonwebtoken": "^7.4.1",
     "mongoose": "^4.10.0",
     "nconf": "^0.8.4",
-    "nodemon": "^1.11.0",
+    "nodemon": "^1.12.1",
     "path": "^0.12.7",
     "vision": "^4.1.1"
   },

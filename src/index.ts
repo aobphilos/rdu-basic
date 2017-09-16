@@ -21,6 +21,7 @@ const database = Database.init(dbConfigs);
 // Starting Application Server
 const serverConfigs = Configs.getServerConfigs();
 
+
 Server.init(serverConfigs, database).then((server) => {
     server.start(() => {
         console.log('Server running at:', server.info.uri);

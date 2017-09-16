@@ -8,12 +8,13 @@ import { IServerConfigurations } from "../configurations";
 
 export default function (server: Hapi.Server, configs: IServerConfigurations, database: IDatabase) {
 
+    const prefix = "/api";
     const taskController = new TaskController(configs, database);
     server.bind(taskController);
 
     server.route({
         method: 'GET',
-        path: '/tasks/{id}',
+        path: `${prefix}/tasks/{id}`,
         config: {
             handler: taskController.getTaskById,
             auth: "jwt",
@@ -42,7 +43,7 @@ export default function (server: Hapi.Server, configs: IServerConfigurations, da
 
     server.route({
         method: 'GET',
-        path: '/tasks',
+        path: `${prefix}/tasks`,
         config: {
             handler: taskController.getTasks,
             auth: "jwt",
@@ -60,7 +61,7 @@ export default function (server: Hapi.Server, configs: IServerConfigurations, da
 
     server.route({
         method: 'DELETE',
-        path: '/tasks/{id}',
+        path: `${prefix}/tasks/{id}`,
         config: {
             handler: taskController.deleteTask,
             auth: "jwt",
@@ -89,7 +90,7 @@ export default function (server: Hapi.Server, configs: IServerConfigurations, da
 
     server.route({
         method: 'PUT',
-        path: '/tasks/{id}',
+        path: `${prefix}/tasks/{id}`,
         config: {
             handler: taskController.updateTask,
             auth: "jwt",
@@ -119,7 +120,7 @@ export default function (server: Hapi.Server, configs: IServerConfigurations, da
 
     server.route({
         method: 'POST',
-        path: '/tasks',
+        path: `${prefix}/tasks`,
         config: {
             handler: taskController.createTask,
             auth: "jwt",

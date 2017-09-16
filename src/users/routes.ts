@@ -8,12 +8,13 @@ import { IServerConfigurations } from "../configurations";
 
 export default function (server: Hapi.Server, serverConfigs: IServerConfigurations, database: IDatabase) {
 
+    const prefix = "/api";
     const userController = new UserController(serverConfigs, database);
     server.bind(userController);
 
     server.route({
         method: 'GET',
-        path: '/users/info',
+        path: `${prefix}/users/info`,
         config: {
             handler: userController.infoUser,
             auth: "jwt",
@@ -39,7 +40,7 @@ export default function (server: Hapi.Server, serverConfigs: IServerConfiguratio
 
     server.route({
         method: 'DELETE',
-        path: '/users',
+        path: `${prefix}/users`,
         config: {
             handler: userController.deleteUser,
             auth: "jwt",
@@ -65,7 +66,7 @@ export default function (server: Hapi.Server, serverConfigs: IServerConfiguratio
 
     server.route({
         method: 'PUT',
-        path: '/users',
+        path: `${prefix}/users`,
         config: {
             handler: userController.updateUser,
             auth: "jwt",
@@ -92,7 +93,7 @@ export default function (server: Hapi.Server, serverConfigs: IServerConfiguratio
 
     server.route({
         method: 'POST',
-        path: '/users',
+        path: `${prefix}/users`,
         config: {
             handler: userController.createUser,
             tags: ['api', 'users'],
@@ -114,7 +115,7 @@ export default function (server: Hapi.Server, serverConfigs: IServerConfiguratio
 
     server.route({
         method: 'POST',
-        path: '/users/login',
+        path: `${prefix}/users/login`,
         config: {
             handler: userController.loginUser,
             tags: ['api', 'users'],

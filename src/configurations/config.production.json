@@ -1,12 +1,12 @@
 {
     "database": {
-        "connectionString": "mongodb://localhost:27017/rdu-db-test"
+        "connectionString": "mongodb://localhost:27017/rdu-db"
     },
     "server": {
         "port": 5000,
         "jwtSecret": "random-secret-password",
-        "jwtExpiration": "1h",
-        "routePrefix": "/api",
+        "jwtExpiration": "12h",
+        "routePrefix": "",
         "plugins": [
             "logger",
             "jwt-auth"
