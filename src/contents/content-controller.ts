@@ -3,7 +3,7 @@ import * as Boom from "boom";
 import { IDatabase } from "../database";
 import { IServerConfigurations } from "../configurations";
 
-export default class HomeController {
+export default class ContentController {
 
     private configs: IServerConfigurations;
 
@@ -11,7 +11,11 @@ export default class HomeController {
         this.configs = configs;
     }
 
-    public async sayHello(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
-        return reply('Hello from server.');
+    public async index(request: Hapi.Request, reply: any) {
+        return reply.file("index.html");
+    }
+
+    public async serveAllFile(request: Hapi.Request, reply: any) {
+        return reply.file(request.params.filename);
     }
 }
