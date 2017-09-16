@@ -6,6 +6,8 @@ const tslint = require('gulp-tslint');
 const mocha = require('gulp-mocha');
 const shell = require('gulp-shell');
 const env = require('gulp-env');
+const ts = require("gulp-typescript");
+const tsProject = ts.createProject("tsconfig.json");
 
 /**
  * Remove build directory.
@@ -20,7 +22,7 @@ gulp.task('clean', function () {
  */
 gulp.task('tslint', () => {
   return gulp.src('src/**/*.ts')
-    .pipe(tslint( { 
+    .pipe(tslint({
       formatter: 'prose'
     }))
     .pipe(tslint.report());
@@ -41,16 +43,22 @@ function compileTS(args, cb) {
   });
 }
 
-gulp.task('compile', shell.task([
+gulp.task('compile', ['tslint'], () => {
+  return tsProject.src()
+    .pipe(tsProject())
+    .js.pipe(gulp.dest('build'));
+});
+
+gulp.task('sh-tsc', shell.task([
   'npm run tsc',
-]))
+]));
 
 /**
  * Watch for changes in TypeScript
  */
-gulp.task('watch', shell.task([
+gulp.task('sh-watch', shell.task([
   'npm run tsc-watch',
-]))
+]));
 /**
  * Copy config files
  */
@@ -72,7 +80,7 @@ gulp.task('client', (cb) => {
 /**
  * Build the project.
  */
-gulp.task('build', ['tslint', 'compile', 'configs', 'client'], () => {
+gulp.task('build', ['compile', 'configs', 'client'], () => {
   console.log('Building the project ...');
 });
 
