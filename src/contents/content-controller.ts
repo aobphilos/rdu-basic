@@ -11,11 +11,11 @@ export default class ContentController {
         this.configs = configs;
     }
 
-    public async index(request: Hapi.Request, reply: any) {
+    public async index(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
         return reply.file("index.html");
     }
 
-    public async serveAllFile(request: Hapi.Request, reply: any) {
+    public async serveAllFile(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
         return reply.file(request.params.filename);
     }
 }
