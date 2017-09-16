@@ -1,15 +1,17 @@
 {
-  "name": "typescript-node",
-  "version": "1.2.0",
+  "name": "rdu-basic",
+  "version": "1.0.0",
   "description": "",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/Talento90/typescript-node.git"
+    "url": "https://github.com/aobphilos/rdu-basic.git"
   },
-  "author": "Talento90",
+  "author": "Aobphilos Sysy",
   "keywords": [
+    "Rational Drug Use",
+    "RDU",
     "typescript",
-    "project structure",
+    "hapi",
     "nodejs"
   ],
   "scripts": {
