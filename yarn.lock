@@ -26,7 +26,7 @@
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-3.5.2.tgz#c11cd2817d3a401b7ba0f5a420f35c56139b1c1e"
 
-"@types/hapi@^16.1.2":
+"@types/hapi@*", "@types/hapi@^16.1.2":
   version "16.1.9"
   resolved "https://registry.yarnpkg.com/@types/hapi/-/hapi-16.1.9.tgz#0748fa17dffdd59c97e6e2ef0c4343afc4261d64"
   dependencies:
@@ -37,6 +37,12 @@
     "@types/node" "*"
     "@types/podium" "*"
     "@types/shot" "*"
+
+"@types/inert@^4.2.3":
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/@types/inert/-/inert-4.2.3.tgz#995a28fd1ba9dc93a0aafdb7f06c44cf2cd71e12"
+  dependencies:
+    "@types/hapi" "*"
 
 "@types/joi@*", "@types/joi@^10.3.2":
   version "10.4.2"
@@ -1794,7 +1800,7 @@ imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
 
-inert@^4.2.0:
+inert@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/inert/-/inert-4.2.1.tgz#da743c478a18a8378032f80ada128a28cd2bba93"
   dependencies:
@@ -2721,10 +2727,6 @@ node-pre-gyp@^0.6.36:
     tape "^4.6.3"
     tar "^2.2.1"
     tar-pack "^3.4.0"
-
-node@0.0.0:
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/node/-/node-0.0.0.tgz#288d62f90530c763eff8d4831ee7343ab3d60793"
 
 nodemon@^1.12.1:
   version "1.12.1"

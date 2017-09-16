@@ -9,21 +9,29 @@ export default function (server: Hapi.Server, configs: IServerConfigurations) {
     server.bind(context);
     server.path(__dirname + '/../client');
 
-    server.route({
-        method: 'GET',
-        path: '/{filename*}',
-        config: {
-            handler: context.serveAllFile,
-            description: 'Serve all content from server.'
-        }
-    });
+    server.register(
+        [require('inert')],
+        (error) => {
+            if (error) {
+                console.log(`Error registering inert plugin: ${error}`);
+            } else {
+                server.route({
+                    method: 'GET',
+                    path: '/{filename*}',
+                    config: {
+                        handler: context.serveAllFile,
+                        description: 'Serve all content from server.'
+                    }
+                });
 
-    server.route({
-        method: 'GET',
-        path: '/',
-        config: {
-            handler: context.index,
-            description: 'Default path for website.'
-        }
-    });
+                server.route({
+                    method: 'GET',
+                    path: '/',
+                    config: {
+                        handler: context.index,
+                        description: 'Default path for website.'
+                    }
+                });
+            }
+        });
 }
