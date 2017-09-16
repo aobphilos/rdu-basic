@@ -11,7 +11,7 @@ const env = require('gulp-env');
  * Remove build directory.
  */
 gulp.task('clean', function () {
-  return gulp.src(outDir, { read: false })
+  return gulp.src('./build', { read: false })
     .pipe(rimraf());
 });
 
@@ -60,9 +60,19 @@ gulp.task('configs', (cb) => {
 });
 
 /**
+ * Copy all client files
+ */
+gulp.task('client', (cb) => {
+  return gulp.src([
+    "!src/client/**/*.ts",
+    "src/client/**/*.*"
+  ]).pipe(gulp.dest('./build/src/client'));
+});
+
+/**
  * Build the project.
  */
-gulp.task('build', ['tslint', 'compile', 'configs'], () => {
+gulp.task('build', ['tslint', 'compile', 'configs', 'client'], () => {
   console.log('Building the project ...');
 });
 
