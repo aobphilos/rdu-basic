@@ -8,6 +8,21 @@ const shell = require('gulp-shell');
 const env = require('gulp-env');
 const ts = require("gulp-typescript");
 const tsProject = ts.createProject("tsconfig.json");
+const sourcemaps = require('gulp-sourcemaps');
+
+/**
+ * Compile TypeScript.
+ */
+gulp.task('sh-tsc', shell.task([
+  'npm run tsc',
+]));
+
+/**
+ * Watch for changes in TypeScript
+ */
+gulp.task('sh-watch', shell.task([
+  'npm run tsc-watch',
+]));
 
 /**
  * Remove build directory.
@@ -29,36 +44,16 @@ gulp.task('tslint', () => {
 });
 
 /**
- * Compile TypeScript.
+ * Compile TypeScript with pipe-line.
  */
-
-function compileTS(args, cb) {
-  return exec(tscCmd + args, (err, stdout, stderr) => {
-    console.log(stdout);
-
-    if (stderr) {
-      console.log(stderr);
-    }
-    cb(err);
-  });
-}
-
 gulp.task('compile', ['tslint'], () => {
   return tsProject.src()
+    .pipe(sourcemaps.init())
     .pipe(tsProject())
-    .js.pipe(gulp.dest('build'));
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('build'));
 });
 
-gulp.task('sh-tsc', shell.task([
-  'npm run tsc',
-]));
-
-/**
- * Watch for changes in TypeScript
- */
-gulp.task('sh-watch', shell.task([
-  'npm run tsc-watch',
-]));
 /**
  * Copy config files
  */
@@ -77,11 +72,29 @@ gulp.task('client', (cb) => {
   ]).pipe(gulp.dest('./build/src/client'));
 });
 
+function copyAsset(cb) {
+
+  Promise.all([
+    gulp.src("src/configurations/*.json")
+      .pipe(gulp.dest('./build/src/configurations')),
+    gulp.src([
+      "!src/client/**/*.ts",
+      "src/client/**/*.*"
+    ]).pipe(gulp.dest('./build/src/client'))
+  ]).then(() => cb());
+
+}
+
+gulp.task('copy', ['compile'], (cb) => {
+  copyAsset(cb);
+});
+
+
 /**
  * Build the project.
  */
-gulp.task('build', ['compile', 'configs', 'client'], () => {
-  console.log('Building the project ...');
+gulp.task('build', ['copy'], (cb) => {
+  cb();
 });
 
 /**

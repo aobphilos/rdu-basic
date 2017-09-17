@@ -1,21 +1,24 @@
 {
-  "name": "typescript-node",
-  "version": "1.2.0",
+  "name": "rdu-basic",
+  "version": "1.0.0",
   "description": "",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/Talento90/typescript-node.git"
+    "url": "https://github.com/aobphilos/rdu-basic.git"
   },
-  "author": "Talento90",
+  "author": "Aobphilos Sysy",
   "keywords": [
+    "Rational Drug Use",
+    "RDU",
     "typescript",
-    "project structure",
+    "hapi",
     "nodejs"
   ],
   "scripts": {
     "tsc": "tsc",
     "tsc-watch": "tsc -w",
     "compile": "gulp compile",
+    "copy": "gulp copy",
     "build": "gulp build",
     "clean": "gulp clean",
     "start": "node build/src/index.js",
@@ -49,6 +52,7 @@
     "gulp-mocha": "^4.3.1",
     "gulp-rimraf": "^0.2.1",
     "gulp-shell": "^0.6.3",
+    "gulp-sourcemaps": "^2.6.1",
     "gulp-tslint": "^8.0.0",
     "gulp-typescript": "^3.2.2",
     "hapi": "^16.1.1",
