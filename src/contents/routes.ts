@@ -29,7 +29,61 @@ export default function (server: Hapi.Server, configs: IServerConfigurations) {
                     path: '/',
                     config: {
                         handler: context.index,
-                        description: 'Default path for website.'
+                        description: 'Index path of RDU site'
+                    }
+                });
+
+                server.route({
+                    method: 'GET',
+                    path: '/aboutus',
+                    config: {
+                        handler: context.aboutus,
+                        description: 'AboutUs path'
+                    }
+                });
+
+                server.route({
+                    method: 'GET',
+                    path: '/roadmap',
+                    config: {
+                        handler: context.roadmap,
+                        description: 'Roadmap path'
+                    }
+                });
+
+                server.route({
+                    method: 'GET',
+                    path: '/media',
+                    config: {
+                        handler: context.media,
+                        description: 'Media path'
+                    }
+                });
+
+                server.route({
+                    method: 'GET',
+                    path: '/news',
+                    config: {
+                        handler: context.news,
+                        description: 'News path'
+                    }
+                });
+
+                server.route({
+                    method: 'GET',
+                    path: '/members',
+                    config: {
+                        handler: context.members,
+                        description: 'Members path'
+                    }
+                });
+
+                server.route({
+                    method: 'GET',
+                    path: '/contactus',
+                    config: {
+                        handler: context.contactus,
+                        description: 'ContactUs path'
                     }
                 });
             }

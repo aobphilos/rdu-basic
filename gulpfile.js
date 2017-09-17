@@ -80,6 +80,8 @@ gulp.task('configs', (cb) => {
 gulp.task('client', (cb) => {
   return gulp.src([
     "!src/client/**/*.ts",
+    "!src/client/**/*.less",
+    "!src/client/**/*.ori",
     "src/client/**/*.*"
   ]).pipe(gulp.dest('./build/src/client'));
 });
@@ -92,6 +94,7 @@ function copyAsset(cb) {
     gulp.src([
       "!src/client/**/*.ts",
       "!src/client/**/*.less",
+      "!src/client/**/*.ori",
       "src/client/**/*.*"
     ]).pipe(gulp.dest('./build/src/client'))
   ]).then(() => cb());
