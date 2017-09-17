@@ -3,6 +3,7 @@
 const gulp = require('gulp');
 const rimraf = require('gulp-rimraf');
 const tslint = require('gulp-tslint');
+const less = require('gulp-less');
 const mocha = require('gulp-mocha');
 const shell = require('gulp-shell');
 const env = require('gulp-env');
@@ -44,13 +45,24 @@ gulp.task('tslint', () => {
 });
 
 /**
+ * Comple LESS with pipe-line.
+ */
+gulp.task('less', () => {
+  return gulp.src('src/**/*.less')
+    .pipe(sourcemaps.init())
+    .pipe(less())
+    .pipe(sourcemaps.write('../src'))
+    .pipe(gulp.dest('./build/src'));
+});
+
+/**
  * Compile TypeScript with pipe-line.
  */
-gulp.task('compile', ['tslint'], () => {
+gulp.task('compile', ['tslint', 'less'], () => {
   return tsProject.src()
     .pipe(sourcemaps.init())
     .pipe(tsProject())
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write('../build'))
     .pipe(gulp.dest('build'));
 });
 
@@ -79,6 +91,7 @@ function copyAsset(cb) {
       .pipe(gulp.dest('./build/src/configurations')),
     gulp.src([
       "!src/client/**/*.ts",
+      "!src/client/**/*.less",
       "src/client/**/*.*"
     ]).pipe(gulp.dest('./build/src/client'))
   ]).then(() => cb());
