@@ -182,11 +182,11 @@ ul.nostyle {
     border-radius: 0;
     margin-bottom: 0;
     .navbar-toggle {
-      margin-top: 32px;
+      margin-top: 30px;
     }
     .navbar-brand {
       height: auto;
-      padding: 22px 15px 21px;
+      padding: 20px 15px 20px;
     }
   }
 }
@@ -200,14 +200,14 @@ ul.nostyle {
       .navbar-nav {
         >li {
           >a {
-            padding-top: 40px;
-            padding-bottom: 40px;
+            padding-top: 33px;
+            padding-bottom: 25px;
           }
           &.active>a,
           &.open>a,
           &:hover>a {
             background: transparent;
-            padding-top: 37px;
+            padding-top: 30px;
             border-top: 3px solid @major_color;
           }
         }
@@ -1049,6 +1049,7 @@ ul.nostyle {
 }
 
 // Customise Zone
+
 @media only screen and (min-width: 768px) {
   //Slider
   #main-slider {
@@ -1058,7 +1059,7 @@ ul.nostyle {
       }
     }
   }
-}
+
 
 @media only screen and (max-width: 767px) {
   #header {
@@ -1075,4 +1076,27 @@ ul.nostyle {
       }
     }
   }
+}
+@media only screen and (min-width: 768px){
+  #header {
+    .container {
+      width: 98%;
+    }
+    .navbar-brand {
+      width: 138px;
+    }
+  } 
+}
+@media only screen and (min-width: 1024px){
+  #header {
+    .container {
+      width: 96%;
+    }
+    .navbar-brand {
+      width: 138px;
+    }
+  } 
+}
+@media only screen and (min-width: 1200px) {
+ 
 }
