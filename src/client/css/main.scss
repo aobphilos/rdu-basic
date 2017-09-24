@@ -11,48 +11,81 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-	@include skel-breakpoints((
-		xlarge: '(max-width: 1680px)',
-		large: '(max-width: 1280px)',
-		medium: '(max-width: 980px)',
-		small: '(max-width: 736px)',
-		xsmall: '(max-width: 480px)',
-		xxsmall: '(max-width: 360px)',
-		xlarge-to-max: '(min-width: 1681px)',
-		small-to-xlarge: '(min-width: 481px) and (max-width: 1680px)'
-	));
-
-	@include skel-layout((
-		reset: 'full',
-		boxModel: 'border',
-		grid: ( gutters: 1.5em )
-	));
-
+@include skel-breakpoints(( xlarge: '(max-width: 1680px)', large: '(max-width: 1280px)', medium: '(max-width: 980px)', small: '(max-width: 736px)', xsmall: '(max-width: 480px)', xxsmall: '(max-width: 360px)', xlarge-to-max: '(min-width: 1681px)', small-to-xlarge: '(min-width: 481px) and (max-width: 1680px)'));
+@include skel-layout(( reset: 'full', boxModel: 'border', grid: ( gutters: 1.5em)));
 // Base.
-
-	@import 'base/page';
-	@import 'base/typography';
-
+@import 'base/page';
+@import 'base/typography';
 // Component.
-
-	@import 'components/section';
-	@import 'components/form';
-	@import 'components/box';
-	@import 'components/icon';
-	@import 'components/image';
-	@import 'components/list';
-	@import 'components/table';
-	@import 'components/button';
-	@import 'components/mini-posts';
-	@import 'components/features';
-	@import 'components/posts';
-
+@import 'components/section';
+@import 'components/form';
+@import 'components/box';
+@import 'components/icon';
+@import 'components/image';
+@import 'components/list';
+@import 'components/table';
+@import 'components/button';
+@import 'components/mini-posts';
+@import 'components/features';
+@import 'components/posts';
 // Layout.
-
-	@import 'layout/wrapper';
-	@import 'layout/main';
-	@import 'layout/sidebar';
-	@import 'layout/header';
-	@import 'layout/banner';
-	@import 'layout/footer';
-	@import 'layout/menu';
+@import 'layout/wrapper';
+@import 'layout/main';
+@import 'layout/sidebar';
+@import 'layout/header';
+@import 'layout/banner';
+@import 'layout/footer';
+@import 'layout/menu'; //Slider
+#main-slider {
+  overflow: hidden;
+  .item {
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+  }
+  .slider-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff; //Styling
+    h2 {
+      margin-top: 180px;
+      font-size: 36px;
+      line-height: 1;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .btn {
+      margin-top: 10px;
+    }
+  } //Buttons
+  .owl-prev,
+  .owl-next {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 30px;
+    display: inline-block;
+    margin-top: -35px;
+    height: 70px;
+    width: 70px;
+    line-height: 70px;
+    text-align: center;
+    border-radius: 100px;
+    z-index: 5;
+    -webkit-transition: background-color 400ms;
+    transition: background-color 400ms;
+  }
+  .owl-prev {
+    left: -35px;
+    text-indent: 14px;
+  }
+  .owl-next {
+    right: -35px;
+    text-indent: -14px;
+  }
+}
