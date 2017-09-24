@@ -9,6 +9,7 @@
   <title>RDU Hospital | AboutUs</title>
   <!-- core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/navbar-fixed-side.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/animate.min.css" rel="stylesheet">
   <link href="css/owl.carousel.css" rel="stylesheet">
@@ -61,87 +62,107 @@
   </header>
   <!--/header-->
 
-  <nav class="navbar navbar-default sidebar" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-lg-2">
+        <nav class="navbar navbar-default navbar-fixed-side">
+          <!-- normal collapsible navbar markup -->
+          <ul id="sidebar_menu" class="sidebar-nav">
+            <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+          </ul>
+          <ul class="sidebar-nav" id="sidebar">
+            <li><a>Link1<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+            <li><a>link2<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+          </ul>
+        </nav>
       </div>
-      <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-sm showopacity glyphicon glyphicon-home"></span></a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuarios <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-sm showopacity glyphicon glyphicon-user"></span></a>
-            <ul class="dropdown-menu forAnimate" role="menu">
-              <li><a href="#">Crear</a></li>
-              <li><a href="#">Modificar</a></li>
-              <li><a href="#">Reportar</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Informes</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Libros<span style="font-size:16px;" class="pull-right hidden-sm showopacity glyphicon glyphicon-th-list"></span></a></li>
-          <li><a href="#">Tags<span style="font-size:16px;" class="pull-right hidden-sm showopacity glyphicon glyphicon-tags"></span></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+      <div class="col-sm-9 col-lg-10">
+        <!-- your page content -->
 
-  <section id="about">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title text-center wow fadeInDown">About Us</h2>
-        <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna
-          aliqua. Ut enim ad minim veniam</p>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 wow fadeInLeft">
-          <h3 class="column-title">Video Intro</h3>
-          <!-- 16:9 aspect ratio -->
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe src="//player.vimeo.com/video/58093852?title=0&amp;byline=0&amp;portrait=0&amp;color=e79b39" frameborder="0" webkitallowfullscreen
-              mozallowfullscreen allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div class="col-sm-6 wow fadeInRight">
-          <h3 class="column-title">Multi Capability</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-            a type specimen book.</p>
-
-          <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-            of type and scrambled it to make a type specimen book.</p>
-
-          <div class="row">
-            <div class="col-sm-6">
-              <ul class="nostyle">
-                <li><i class="fa fa-check-square"></i> Ipsum is simply dummy</li>
-                <li><i class="fa fa-check-square"></i> When an unknown</li>
-              </ul>
-            </div>
-
-            <div class="col-sm-6">
-              <ul class="nostyle">
-                <li><i class="fa fa-check-square"></i> The printing and typesetting</li>
-                <li><i class="fa fa-check-square"></i> Lorem Ipsum has been</li>
-              </ul>
+        <section id="cta" class="wow fadeIn">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-9">
+                <h2>Premium quality free onepage template</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
+                  to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                  typesetting, remaining essentially unchanged.
+                </p>
+              </div>
+              <div class="col-sm-3 text-right">
+                <a class="btn btn-primary btn-lg" href="#">Download Now!</a>
+              </div>
             </div>
           </div>
+        </section>
+        <!--/#cta-->
 
-          <a class="btn btn-primary" href="#">Learn More</a>
+        <section id="about">
+          <div class="container">
 
-        </div>
+            <div class="section-header">
+              <h2 class="section-title text-center wow fadeInDown">About Us</h2>
+              <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore
+                magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6 wow fadeInLeft">
+                <h3 class="column-title">Video Intro</h3>
+                <!-- 16:9 aspect ratio -->
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe src="//player.vimeo.com/video/58093852?title=0&amp;byline=0&amp;portrait=0&amp;color=e79b39" frameborder="0" webkitallowfullscreen
+                    mozallowfullscreen allowfullscreen></iframe>
+                </div>
+              </div>
+
+              <div class="col-sm-6 wow fadeInRight">
+                <h3 class="column-title">Multi Capability</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
+                  to make a type specimen book.</p>
+
+                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+                  a galley of type and scrambled it to make a type specimen book.</p>
+
+                <div class="row">
+                  <div class="col-sm-6">
+                    <ul class="nostyle">
+                      <li><i class="fa fa-check-square"></i> Ipsum is simply dummy</li>
+                      <li><i class="fa fa-check-square"></i> When an unknown</li>
+                    </ul>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <ul class="nostyle">
+                      <li><i class="fa fa-check-square"></i> The printing and typesetting</li>
+                      <li><i class="fa fa-check-square"></i> Lorem Ipsum has been</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <a class="btn btn-primary" href="#">Learn More</a>
+
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--/#about-->
+
+        <section id="cta2">
+          <div class="container">
+            <div class="text-center">
+              <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms"><span>MULTI</span> IS A CREATIVE HTML TEMPLATE</h2>
+              <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">Mauris pretium auctor quam. Vestibulum et nunc id nisi fringilla <br />iaculis. Mauris pretium auctor quam.</p>
+              <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms"><a class="btn btn-primary btn-lg" href="#">Free Download</a></p>
+              <img class="img-responsive wow fadeIn" src="images/cta2/cta2-img.png" alt="" data-wow-duration="300ms" data-wow-delay="300ms">
+            </div>
+          </div>
+        </section>
       </div>
     </div>
-  </section>
-  <!--/#about-->
+  </div>
 
   <footer id="footer">
     <div class="container">
@@ -167,6 +188,7 @@
     </div>
   </footer>
   <!--/#footer-->
+  
 
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
