@@ -4,6 +4,7 @@ const gulp = require('gulp');
 const rimraf = require('gulp-rimraf');
 const tslint = require('gulp-tslint');
 const less = require('gulp-less');
+const sass = require('gulp-sass');
 const mocha = require('gulp-mocha');
 const shell = require('gulp-shell');
 const env = require('gulp-env');
@@ -29,7 +30,9 @@ gulp.task('sh-watch', shell.task([
  * Remove build directory.
  */
 gulp.task('clean', function () {
-  return gulp.src('./build', { read: false })
+  return gulp.src('./build', {
+      read: false
+    })
     .pipe(rimraf());
 });
 
@@ -56,9 +59,22 @@ gulp.task('less', () => {
 });
 
 /**
+ * Comple SASS with pipe-line.
+ */
+gulp.task('sass', () => {
+  return gulp.src('src/**/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      //outputStyle: 'compressed'
+    }).on('error', sass.logError))
+    .pipe(sourcemaps.write('../src/'))
+    .pipe(gulp.dest('./build/src'));
+});
+
+/**
  * Compile TypeScript with pipe-line.
  */
-gulp.task('compile', ['tslint', 'less'], () => {
+gulp.task('compile', ['tslint', 'sass'], () => {
   return tsProject.src()
     .pipe(sourcemaps.init())
     .pipe(tsProject())
@@ -81,6 +97,8 @@ gulp.task('client', (cb) => {
   return gulp.src([
     "!src/client/**/*.ts",
     "!src/client/**/*.less",
+    "!src/client/**/*.scss",
+    "!src/client/**/*.wip",
     "!src/client/**/*.ori",
     "src/client/**/*.*"
   ]).pipe(gulp.dest('./build/src/client'));
@@ -90,10 +108,12 @@ function copyAsset(cb) {
 
   Promise.all([
     gulp.src("src/configurations/*.json")
-      .pipe(gulp.dest('./build/src/configurations')),
+    .pipe(gulp.dest('./build/src/configurations')),
     gulp.src([
       "!src/client/**/*.ts",
       "!src/client/**/*.less",
+      "!src/client/**/*.scss",
+      "!src/client/**/*.wip",
       "!src/client/**/*.ori",
       "src/client/**/*.*"
     ]).pipe(gulp.dest('./build/src/client'))
