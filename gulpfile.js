@@ -1,6 +1,8 @@
 'use strict';
 
+const pump = require('pump');
 const gulp = require('gulp');
+const uglify = require('gulp-uglify');
 const rimraf = require('gulp-rimraf');
 const tslint = require('gulp-tslint');
 const less = require('gulp-less');
@@ -50,7 +52,7 @@ gulp.task('tslint', () => {
 /**
  * Comple LESS with pipe-line.
  */
-gulp.task('less', () => {
+gulp.task('less', ['tslint'], () => {
   return gulp.src('src/**/*.less')
     .pipe(sourcemaps.init())
     .pipe(less())
@@ -61,11 +63,11 @@ gulp.task('less', () => {
 /**
  * Comple SASS with pipe-line.
  */
-gulp.task('sass', () => {
+gulp.task('sass', ['tslint'], () => {
   return gulp.src('src/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
-      //outputStyle: 'compressed'
+      outputStyle: 'compressed'
     }).on('error', sass.logError))
     .pipe(sourcemaps.write('../src/'))
     .pipe(gulp.dest('./build/src'));
@@ -74,7 +76,7 @@ gulp.task('sass', () => {
 /**
  * Compile TypeScript with pipe-line.
  */
-gulp.task('compile', ['tslint', 'sass'], () => {
+gulp.task('compile', ['sass'], () => {
   return tsProject.src()
     .pipe(sourcemaps.init())
     .pipe(tsProject())
@@ -85,7 +87,7 @@ gulp.task('compile', ['tslint', 'sass'], () => {
 /**
  * Copy config files
  */
-gulp.task('configs', (cb) => {
+gulp.task('copy.config', ['compile'], () => {
   return gulp.src("src/configurations/*.json")
     .pipe(gulp.dest('./build/src/configurations'));
 });
@@ -93,7 +95,7 @@ gulp.task('configs', (cb) => {
 /**
  * Copy all client files
  */
-gulp.task('client', (cb) => {
+gulp.task('copy.client', ['copy.config'], () => {
   return gulp.src([
     "!src/client/**/*.ts",
     "!src/client/**/*.less",
@@ -104,9 +106,8 @@ gulp.task('client', (cb) => {
   ]).pipe(gulp.dest('./build/src/client'));
 });
 
-function copyAsset(cb) {
-
-  Promise.all([
+function copyAsset() {
+  return Promise.all([
     gulp.src("src/configurations/*.json")
     .pipe(gulp.dest('./build/src/configurations')),
     gulp.src([
@@ -115,33 +116,70 @@ function copyAsset(cb) {
       "!src/client/**/*.scss",
       "!src/client/**/*.wip",
       "!src/client/**/*.ori",
-      "src/client/**/*.*"
+      "src/client/**/*.*",
     ]).pipe(gulp.dest('./build/src/client'))
-  ]).then(() => cb());
+  ]);
 
 }
 
-gulp.task('copy', ['compile'], (cb) => {
-  copyAsset(cb);
+function compressJS() {
+  return Promise.all([
+    gulp.src([
+      "!src/client/**/*.min.js",
+      "src/client/**/*.js",
+    ])
+    .pipe(uglify({
+      mangle: true
+    }))
+    .pipe(gulp.dest('build/src/client', {
+      overwrite: true
+    }))
+  ]);
+}
+
+/**
+ * Copy the project.
+ */
+gulp.task('copy', ['copy.client'], (cb) => {
+  cb();
 });
 
+/**
+ * Compress Javascript.
+ */
+gulp.task('compress', ['copy.client'], (cb) => {
+  pump([
+      gulp.src([
+        "!src/client/**/*.min.js",
+        "src/client/**/*.js",
+      ]),
+      uglify({
+        mangle: true
+      }),
+      gulp.dest('build/src/client', {
+        overwrite: true
+      })
+    ],
+    cb
+  );
+});
 
 /**
  * Build the project.
  */
-gulp.task('build', ['copy'], (cb) => {
+gulp.task('build', ['compress'], (cb) => {
   cb();
 });
 
 /**
  * Run tests.
  */
-gulp.task('test', ['build'], (cb) => {
+gulp.task('test', ['build'], () => {
   const envs = env.set({
     NODE_ENV: 'test'
   });
 
-  gulp.src(['build/test/**/*.js'])
+  return gulp.src(['build/test/**/*.js'])
     .pipe(envs)
     .pipe(mocha())
     .once('error', (error) => {
