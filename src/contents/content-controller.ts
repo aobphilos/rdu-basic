@@ -47,6 +47,10 @@ export default class ContentController {
         return reply.file("performance.html");
     }
 
+    public async toward(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
+        return reply.file("toward.html");
+    }
+
     public async curriculum(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
         return reply.file("curriculum.html");
     }

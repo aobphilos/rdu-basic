@@ -283,6 +283,6 @@
 
     });
 
-  });
+  }); // end document ready ($)
 
 })(jQuery);

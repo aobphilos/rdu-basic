@@ -55,6 +55,11 @@ export default function (server: Hapi.Server, configs: IServerConfigurations) {
                     },
                     {
                         method: 'GET',
+                        path: '/toward',
+                        handler: context.toward
+                    },
+                    {
+                        method: 'GET',
                         path: '/curriculum',
                         handler: context.curriculum
                     },

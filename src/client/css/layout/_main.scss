@@ -27,14 +27,17 @@
   }
   .key {
     color: _palette(accent);
-    &-red {
-      color: red
-    }
-    &-blue {
-      color: blue
-    }
-    &-green {
-      color: green
+  }
+  #please {
+    ul {
+      >li {
+        >h2 {
+          color: green;
+          font-weight: bolder;
+          border-bottom: solid 3px _palette(border);
+          text-align: center;
+        }
+      }
     }
   }
   @include breakpoint(xlarge) {
