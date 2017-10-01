@@ -43,10 +43,6 @@ export default class ContentController {
         return reply.file("please.html");
     }
 
-    public async guide(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
-        return reply.file("guide.html");
-    }
-
     public async performance(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
         return reply.file("performance.html");
     }

@@ -50,11 +50,6 @@ export default function (server: Hapi.Server, configs: IServerConfigurations) {
                     },
                     {
                         method: 'GET',
-                        path: '/guide',
-                        handler: context.guide
-                    },
-                    {
-                        method: 'GET',
                         path: '/performance',
                         handler: context.performance
                     },
