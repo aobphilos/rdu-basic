@@ -11,6 +11,18 @@ export default class ContentController {
         this.configs = configs;
     }
 
+    public async postHandler(request: Hapi.Request, reply: Hapi.ReplyWithContinue) {
+
+        const response = request.response;
+        if (response.isBoom &&
+            response.output.statusCode === 404) {
+
+            return reply.file('404.html').code(404);
+        }
+
+        return reply.continue();
+    }
+
     public async serveAllFile(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
         return reply.file(request.params.filename);
     }

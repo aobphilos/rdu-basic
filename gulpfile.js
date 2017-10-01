@@ -140,8 +140,8 @@ function compressJS() {
 /**
  * Copy the project.
  */
-gulp.task('copy', ['copy.client'], (cb) => {
-  cb();
+gulp.task('copy', [], () => {
+  return copyAsset();
 });
 
 /**

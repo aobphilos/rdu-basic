@@ -12,6 +12,7 @@ export default function (server: Hapi.Server, configs: IServerConfigurations) {
     server.register(
         [require('inert')],
         (error) => {
+
             if (error) {
                 console.log(`Error registering inert plugin: ${error}`);
             } else {
@@ -44,10 +45,10 @@ export default function (server: Hapi.Server, configs: IServerConfigurations) {
 
                 server.route({
                     method: 'GET',
-                    path: '/roadmap',
+                    path: '/toward',
                     config: {
                         handler: context.roadmap,
-                        description: 'Roadmap path'
+                        description: 'toward path'
                     }
                 });
 
@@ -86,6 +87,12 @@ export default function (server: Hapi.Server, configs: IServerConfigurations) {
                         description: 'ContactUs path'
                     }
                 });
+
+                server.ext({
+                    type: 'onPostHandler',
+                    method: context.postHandler
+                });
+
             }
         });
 }
