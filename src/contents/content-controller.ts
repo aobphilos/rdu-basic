@@ -35,20 +35,56 @@ export default class ContentController {
         return reply.file("aboutus.html");
     }
 
-    public async roadmap(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
-        return reply.file("roadmap.html");
+    public async history(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
+        return reply.file("history.html");
     }
 
-    public async media(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
-        return reply.file("media.html");
+    public async please(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
+        return reply.file("please.html");
+    }
+
+    public async guide(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
+        return reply.file("guide.html");
+    }
+
+    public async performance(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
+        return reply.file("performance.html");
+    }
+
+    public async curriculum(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
+        return reply.file("curriculum.html");
+    }
+
+    public async instructional(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
+        return reply.file("instructional.html");
+    }
+
+    public async elearning(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
+        return reply.file("elearning.html");
+    }
+
+    public async documents(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
+        return reply.file("documents.html");
+    }
+
+    public async video(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
+        return reply.file("video.html");
+    }
+
+    public async application(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
+        return reply.file("application.html");
+    }
+
+    public async other(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
+        return reply.file("other.html");
     }
 
     public async news(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
         return reply.file("news.html");
     }
 
-    public async members(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
-        return reply.file("members.html");
+    public async committee(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
+        return reply.file("committee.html");
     }
 
     public async contactus(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
