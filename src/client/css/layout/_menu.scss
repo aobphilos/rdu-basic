@@ -75,7 +75,7 @@
         }
         >li {
           margin: 0.125em 0 0 0;
-          padding: 0.125em 0 0 0;
+          padding: 0.125em 0 0 0.75em;
         }
       }
       &:first-child {
@@ -84,7 +84,7 @@
         padding-top: 0;
       }
       &.active {
-        color: _palette(accent);
+        color: _palette(accent);        
       }
     }
   }

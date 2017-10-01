@@ -16,6 +16,10 @@
     'small-to-xlarge': '(min-width: 481px) and (max-width: 1680px)'
   });
 
+  skel.layout({
+    conditionals: true
+  });
+
   $(function () {
 
     var $window = $(window),
@@ -278,7 +282,7 @@
       });
 
     });
-   
+
   });
 
 })(jQuery);
