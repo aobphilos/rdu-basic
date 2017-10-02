@@ -51,10 +51,6 @@ export default class ContentController {
         return reply.file("toward.html");
     }
 
-    public async curriculum(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
-        return reply.file("curriculum.html");
-    }
-
     public async instructional(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
         return reply.file("instructional.html");
     }

@@ -28,7 +28,7 @@
   .key {
     color: _palette(accent);
   }
-  #please {
+  #toward {
     ul {
       >li {
         >h2 {
@@ -36,6 +36,14 @@
           font-weight: bolder;
           border-bottom: solid 3px _palette(border);
           text-align: center;
+        }
+        >ul {
+          >li {
+            a {
+              color: _palette(fg-bold);
+              font-size: smaller;
+            }
+          }
         }
       }
     }
