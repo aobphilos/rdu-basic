@@ -48,11 +48,23 @@
       }
     }
   }
+  #media {
+    iframe {
+      width: 85%;
+      height: 340px;
+    }
+  }
   @include breakpoint(xlarge) {
     >.inner {
       @include padding(0, 5em);
       >section {
         @include padding(5em, 0);
+      }
+    }
+    #media {
+      iframe {
+        width: 90%;
+        height: 255px;
       }
     }
   }
@@ -63,12 +75,24 @@
         @include padding(4em, 0);
       }
     }
+    #media {
+      iframe {
+        width: 90%;
+        height: 305px;
+      }
+    }
   }
   @include breakpoint(small) {
     >.inner {
       @include padding(0, 2em);
       >section {
         @include padding(3em, 0);
+      }
+    }
+    #media {
+      iframe{
+        width: 100%;
+        height: 335px;
       }
     }
   }
