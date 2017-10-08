@@ -67,9 +67,20 @@ gulp.task('copy.config', ['compile'], () => {
 });
 
 /**
+ * Copy label files
+ */
+gulp.task('copy.label', ['copy.config'], () => {
+  return gulp.src([
+      "src/label/*.json",
+      "src/label/*.xlsx"
+    ])
+    .pipe(gulp.dest('./build/src/label'));
+});
+
+/**
  * Copy all client files
  */
-gulp.task('copy.client', ['copy.config'], () => {
+gulp.task('copy.client', ['copy.label'], () => {
   return gulp.src([
     "!src/client/**/*.ts",
     "!src/client/**/*.less",

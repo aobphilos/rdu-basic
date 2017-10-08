@@ -11,6 +11,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <!--[if lte IE 8]><script src="js/ie/html5shiv.min.js"></script><![endif]-->
+  <link rel="stylesheet" href="css/autocomplete.min.css" />
   <link rel="stylesheet" href="css/modal.css" />
   <link rel="stylesheet" href="css/main.css" />
   <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
@@ -201,14 +202,14 @@
               <div class="3u$">
                 <a href="#" class="button fit special icon fa-search"></a>
               </div>
-              <div class="12u$">
+              <!-- <div class="12u$">
                 <input type="radio" id="search-type-label-mini" name="search-type-mini" checked>
                 <label for="search-type-label-mini">ค้นหาชื่อยา</label>
               </div>
               <div class="12u$">
                 <input type="radio" id="search-type-group-mini" name="search-type-mini">
                 <label for="search-type-group-mini">ค้นหาจากกลุ่มยา</label>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="row ">
@@ -217,24 +218,24 @@
                 <div class="row uniform">
                   <div class="4u 12u$(xsmall)">
                     <span>ชื่อยา</span>
-                    <input type="text" id="drug-name-thai" placeholder="ชื่อยา" />
+                    <input type="text" id="drugNameThai" placeholder="ชื่อยา" />
                   </div>
                   <div class="4u 12u$(xsmall)">
                     <span class="not-xsmall">&nbsp;</span>
-                    <input type="text" id="drug-name-eng" placeholder="Generic Drug Name" />
+                    <input type="text" id="drugNameEng" placeholder="Generic Drug Name" />
                   </div>
                   <div class="4u$ 12u$(xsmall)">
                     <span>รูปแบบยา</span>
-                    <input type="text" id="drug-type" placeholder="รูปแบบยา" />
+                    <input type="text" id="drugType" placeholder="รูปแบบยา" />
                   </div>
                   <!-- Break -->
                   <div class="4u 12u$(xsmall)">
                     <span>กลุ่มยา</span>
-                    <input type="text" id="drug-group-thai" placeholder="กลุ่มยา (ไทย)" />
+                    <input type="text" id="groupNameThai" placeholder="กลุ่มยา (ไทย)" />
                   </div>
                   <div class="4u 12u$(xsmall)">
                     <span class="not-xsmall">&nbsp;</span>
-                    <input type="text" id="drug-group-eng" placeholder="NLEM Code level 2" />
+                    <input type="text" id="groupNameEng" placeholder="NLEM Code level 2" />
                   </div>
                   <div class="4u$ 12u$(xsmall)">
                     <span class="not-xsmall">&nbsp;</span>
@@ -242,67 +243,67 @@
                   <!-- Break -->
                   <div class="12u$">
                     <span>ข้อบ่งใช้</span>
-                    <input type="text" id="termsOfUse-1" placeholder="ข้อบ่งใช้-1" />
+                    <input type="text" id="termsOfUse1" placeholder="ข้อบ่งใช้-1" />
                   </div>
                   <!-- Break -->
                   <div class="12u$">
-                    <input type="text" id="termsOfUse-2" placeholder="ข้อบ่งใช้-2" />
+                    <input type="text" id="termsOfUse2" placeholder="ข้อบ่งใช้-2" />
                   </div>
                   <!-- Break -->
                   <div class="12u$">
-                    <input type="text" id="termsOfUse-3" placeholder="ข้อบ่งใช้-3" />
+                    <input type="text" id="termsOfUse3" placeholder="ข้อบ่งใช้-3" />
                   </div>
                   <!-- Break -->
                   <div class="12u$">
                     <span>คำแนะนำในการใช้ยา</span>
-                    <input type="text" id="instructionsForUse-1" placeholder="คำแนะนำในการใช้ยา-1" />
+                    <input type="text" id="instructionsForUse1" placeholder="คำแนะนำในการใช้ยา-1" />
                   </div>
                   <!-- Break -->
                   <div class="12u$">
-                    <input type="text" id="instructionsForUse-2" placeholder="คำแนะนำในการใช้ยา-2" />
+                    <input type="text" id="instructionsForUse2" placeholder="คำแนะนำในการใช้ยา-2" />
                   </div>
                   <!-- Break -->
                   <div class="12u$">
-                    <input type="text" id="instructionsForUse-3" placeholder="คำแนะนำในการใช้ยา-3" />
+                    <input type="text" id="instructionsForUse3" placeholder="คำแนะนำในการใช้ยา-3" />
                   </div>
                   <!-- Break -->
                   <div class="12u$">
                     <span>อาการไม่พึงประสงค์</span>
-                    <input type="text" id="adverseEffects-1" placeholder="อาการไม่พึงประสงค์-1" />
+                    <input type="text" id="adverseEffects1" placeholder="อาการไม่พึงประสงค์-1" />
                   </div>
                   <!-- Break -->
                   <div class="12u$">
-                    <input type="text" id="adverseEffects-2" placeholder="อาการไม่พึงประสงค์-2" />
+                    <input type="text" id="adverseEffects2" placeholder="อาการไม่พึงประสงค์-2" />
                   </div>
                   <!-- Break -->
                   <div class="12u$">
-                    <input type="text" id="adverseEffects-3" placeholder="อาการไม่พึงประสงค์-3" />
+                    <input type="text" id="adverseEffects3" placeholder="อาการไม่พึงประสงค์-3" />
                   </div>
                   <!-- Break -->
                   <div class="12u$">
                     <span>ข้อห้ามใช้</span>
-                    <input type="text" id="contraindication-1" placeholder="ข้อห้ามใช้-1" />
+                    <input type="text" id="contraindication1" placeholder="ข้อห้ามใช้-1" />
                   </div>
                   <!-- Break -->
                   <div class="12u$">
-                    <input type="text" id="contraindication-2" placeholder="ข้อห้ามใช้-2" />
+                    <input type="text" id="contraindication2" placeholder="ข้อห้ามใช้-2" />
                   </div>
                   <!-- Break -->
                   <div class="12u$">
-                    <input type="text" id="contraindication-3" placeholder="ข้อห้ามใช้-3" />
+                    <input type="text" id="contraindication3" placeholder="ข้อห้ามใช้-3" />
                   </div>
                   <!-- Break -->
                   <div class="12u$">
                     <span>ข้อควรระวังในการใช้ยา</span>
-                    <input type="text" id="medicationPrecautions-1" placeholder="ข้อควรระวังในการใช้ยา-1" />
+                    <input type="text" id="medicationPrecautions1" placeholder="ข้อควรระวังในการใช้ยา-1" />
                   </div>
                   <!-- Break -->
                   <div class="12u$">
-                    <input type="text" id="medicationPrecautions-2" placeholder="ข้อควรระวังในการใช้ยา-2" />
+                    <input type="text" id="medicationPrecautions2" placeholder="ข้อควรระวังในการใช้ยา-2" />
                   </div>
                   <!-- Break -->
                   <div class="12u$">
-                    <input type="text" id="medicationPrecautions-3" placeholder="ข้อควรระวังในการใช้ยา-3" />
+                    <input type="text" id="medicationPrecautions3" placeholder="ข้อควรระวังในการใช้ยา-3" />
                   </div>
                   <!-- Break -->
                   <div class="6u 12u$(xsmall)">
@@ -327,14 +328,14 @@
                     <span>&nbsp;</span>
                     <a href="#" class="button fit special icon fa-search"></a>
                   </div>
-                  <div class="12u$">
+                  <!-- <div class="12u$">
                     <input type="radio" id="search-type-label" name="search-type" checked>
                     <label for="search-type-label">ค้นหาชื่อยา</label>
                   </div>
                   <div class="12u$">
                     <input type="radio" id="search-type-group" name="search-type">
                     <label for="search-type-group">ค้นหาจากกลุ่มยา</label>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -441,9 +442,11 @@
 
   <!-- Scripts -->
   <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.autocomplete.min.js"></script>
   <script src="js/skel.min.js"></script>
   <script src="js/util.js"></script>
   <!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
+  <script src="js/toward.js"></script>
   <script src="js/main.js"></script>
 
 </body>

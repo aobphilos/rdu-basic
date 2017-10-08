@@ -43,6 +43,7 @@
     "bcryptjs": "^2.4.3",
     "boom": "^4.3.1",
     "chai": "^3.5.0",
+    "excel": "^0.1.7",
     "fs": "0.0.1-security",
     "good": "^7.2.0",
     "good-console": "^6.4.0",
