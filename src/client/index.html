@@ -12,6 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <!--[if lte IE 8]><script src="js/ie/html5shiv.min.js"></script><![endif]-->
   <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/flexslider.css" />
   <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
   <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
   <link rel="shortcut icon" href="images/ico/favicon.ico">
@@ -45,7 +46,12 @@
           <header class="main">
             <h1>Welcome to RDU Hospital</h1>
           </header>
-          <span class="image main"><img src="images/slider/rdu-bg1.jpg" alt="" /></span>
+          <div class="row">
+            <div class="12u$">
+              <div id="slider_welcome" class="flexslider"></div>
+            </div>
+          </div>
+          <!-- <span class="image main"><img src="images/slider/rdu-bg1.jpg" alt="" /></span> -->
         </section>
 
         <!-- Section -->
@@ -84,54 +90,36 @@
 
         <!-- Section -->
         <section>
-          <!-- Gallery -->
           <header class="major">
             <h3>ประมวลภาพกิจกรรม</h3>
           </header>
-          <div class="box alt">
-            <div class="row 50% uniform">
-              <div class="6u 12u$(xsmall)"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-              <div class="6u$ 12u$(xsmall)">
-                <div class="row 50% uniform">
-                  <div class="6u"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-                  <div class="6u$"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-                  <!-- Break -->
-                  <div class="6u"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-                  <div class="6u$"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-                </div>
-              </div>
+
+          <div class="row">
+            <div class="7u$ -2u 9u$(xlarge) -2u(xlarge) 9u$(large) -2u(large) 12u$(small) ">
+              <div id="slider" class="flexslider"></div>
+              <div id="carousel" class="flexslider"></div>
             </div>
           </div>
+
         </section>
 
         <!-- Section -->
-        <section>
+        <section id="media">
           <header class="major">
             <h3>สื่อเผยแพร่</h3>
           </header>
-          <div class="posts">
-            <article>
-              <a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-              <h3>Interdum aenean</h3>
-              <ul class="actions">
-                <li><a href="#" class="button">More</a></li>
-              </ul>
-            </article>
-            <article>
-              <a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-              <h3>Nulla amet dolore</h3>
-              <ul class="actions">
-                <li><a href="#" class="button">More</a></li>
-              </ul>
-            </article>
-            <article>
-              <a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-              <h3>Tempus ullamcorper</h3>
-              <ul class="actions">
-                <li><a href="#" class="button">More</a></li>
-              </ul>
-            </article>
+
+          <div class="row">
+            <div class="6u 12u$(small)">
+              <iframe id="player-shuffle" src="https://www.youtube.com/embed?listType=playlist&amp;list=UUV-yAQGT4p40wn5uZRKbZ9w&amp;autoplay=1&amp;rel=0&amp;showinfo=0"
+                frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="6u 12u$(small)">
+              <iframe id="player-normal" src="https://www.youtube.com/embed?listType=playlist&amp;list=PLYvEhGv5M9P4XXrubUcb-iZOD-gR0EtPv&amp;rel=0"
+                frameborder="0" allowfullscreen></iframe>
+            </div>
           </div>
+
         </section>
 
         <!-- Section -->
@@ -209,10 +197,13 @@
 
   <!-- Scripts -->
   <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.fitvid.js"></script>
+  <script src="js/jquery.flexslider.js"></script>
   <script src="js/skel.min.js"></script>
   <script src="js/util.js"></script>
   <!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
   <script src="js/main.js"></script>
+  <script src="js/index.js"></script>
 
 </body>
 
