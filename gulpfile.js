@@ -5,28 +5,12 @@ const gulp = require('gulp');
 const uglify = require('gulp-uglify');
 const rimraf = require('gulp-rimraf');
 const tslint = require('gulp-tslint');
-const less = require('gulp-less');
 const sass = require('gulp-sass');
 const mocha = require('gulp-mocha');
-const shell = require('gulp-shell');
 const env = require('gulp-env');
 const ts = require("gulp-typescript");
 const tsProject = ts.createProject("tsconfig.json");
 const sourcemaps = require('gulp-sourcemaps');
-
-/**
- * Compile TypeScript.
- */
-gulp.task('sh-tsc', shell.task([
-  'npm run tsc',
-]));
-
-/**
- * Watch for changes in TypeScript
- */
-gulp.task('sh-watch', shell.task([
-  'npm run tsc-watch',
-]));
 
 /**
  * Remove build directory.
@@ -50,17 +34,6 @@ gulp.task('tslint', () => {
 });
 
 /**
- * Comple LESS with pipe-line.
- */
-gulp.task('less', ['tslint'], () => {
-  return gulp.src('src/**/*.less')
-    .pipe(sourcemaps.init())
-    .pipe(less())
-    .pipe(sourcemaps.write('../src'))
-    .pipe(gulp.dest('./build/src'));
-});
-
-/**
  * Comple SASS with pipe-line.
  */
 gulp.task('sass', ['tslint'], () => {
@@ -72,6 +45,7 @@ gulp.task('sass', ['tslint'], () => {
     .pipe(sourcemaps.write('../src/'))
     .pipe(gulp.dest('./build/src'));
 });
+
 
 /**
  * Compile TypeScript with pipe-line.
