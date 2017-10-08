@@ -149,8 +149,8 @@ html[xmlns] .flexslider .slides {
 
 .flex-direction-nav a:before {
   font-family: "FontAwesome";
-  font-size: 40px;
-  line-height: 42px;
+  font-size: 32px;
+  line-height: 32px;
   display: inline-block;
   content: '\f053';
   color: rgba(0, 0, 0, 0.8);
@@ -337,5 +337,9 @@ html[xmlns] .flexslider .slides {
   .flex-direction-nav .flex-next {
     opacity: 1;
     right: 10px;
+  }
+  .flex-direction-nav a:before {
+    font-size: 28px;
+    line-height: 36px;
   }
 }
