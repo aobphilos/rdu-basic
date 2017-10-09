@@ -1,7 +1,8 @@
 import * as Mongoose from "mongoose";
 
 export interface ILabel extends Mongoose.Document {
-  drugId: string;
+  orderId: String;
+  atcCode: String;
   drugNameThai: string;
   drugNameEng: string;
   drugType: string;

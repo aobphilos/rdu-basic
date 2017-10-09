@@ -191,7 +191,7 @@
       <div id="modal">
         <dialog class="modal modal-overlay" id="modal-drug-label">
           <a href="#" class="btn-close">
-            <i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-times-circle fa-3x" aria-hidden="true"></i>
           </a>
           <h3>โรงพยาบาลส่งเสริมการใช้ยาอย่างสมเหตุผล</h3>
           <div class="box only-small">
@@ -200,7 +200,8 @@
                 <input type="text" id="searchDrugLabelMini" name="searchDrugLabel" placeholder="ค้นหาชื่อยา">
               </div>
               <div class="3u$">
-                <a href="#" class="button fit special icon fa-search"></a>
+                <a href="#" class="button fit special icon fa-trash-o btn-clear">
+                </a>
               </div>
               <!-- <div class="12u$">
                 <input type="radio" id="search-type-label-mini" name="search-type-mini" checked>
@@ -215,6 +216,8 @@
           <div class="row ">
             <div class="9u 8u(large) 12u$(small)">
               <div class="box">
+                <input type="hidden" id="orderId">
+                <input type="hidden" id="atcCode">
                 <div class="row uniform">
                   <div class="4u 12u$(xsmall)">
                     <span>ชื่อยา</span>
@@ -326,7 +329,8 @@
                   </div>
                   <div class="3u$">
                     <span>&nbsp;</span>
-                    <a href="#" class="button fit special icon fa-search"></a>
+                    <a href="#" class="button fit special icon fa-trash-o btn-clear">
+                    </a>
                   </div>
                   <!-- <div class="12u$">
                     <input type="radio" id="search-type-label" name="search-type" checked>

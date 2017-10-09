@@ -85,7 +85,6 @@ gulp.task('copy.client', ['copy.label'], () => {
     "!src/client/**/*.ts",
     "!src/client/**/*.less",
     "!src/client/**/*.scss",
-    "!src/client/**/*.wip",
     "!src/client/**/*.ori",
     "src/client/**/*.*"
   ]).pipe(gulp.dest('./build/src/client'));
@@ -96,10 +95,14 @@ function copyAsset() {
     gulp.src("src/configurations/*.json")
     .pipe(gulp.dest('./build/src/configurations')),
     gulp.src([
+      "src/label/*.json",
+      "src/label/*.xlsx"
+    ])
+    .pipe(gulp.dest('./build/src/label')),
+    gulp.src([
       "!src/client/**/*.ts",
       "!src/client/**/*.less",
       "!src/client/**/*.scss",
-      "!src/client/**/*.wip",
       "!src/client/**/*.ori",
       "src/client/**/*.*",
     ]).pipe(gulp.dest('./build/src/client'))
