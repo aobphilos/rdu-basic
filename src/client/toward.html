@@ -11,6 +11,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <!--[if lte IE 8]><script src="js/ie/html5shiv.min.js"></script><![endif]-->
+  <link rel="stylesheet" href="css/autocomplete.min.css" />
+  <link rel="stylesheet" href="css/modal.css" />
   <link rel="stylesheet" href="css/main.css" />
   <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
   <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
@@ -33,10 +35,26 @@
         <!-- Header -->
         <header id="header">
           <ul class="icons">
-            <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-            <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-            <li><a href="#" class="icon fa-youtube"><span class="label">Youtube</span></a></li>
+            <li>
+              <a href="#" class="icon fa-twitter">
+                <span class="label">Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="icon fa-facebook">
+                <span class="label">Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="icon fa-instagram">
+                <span class="label">Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="icon fa-youtube">
+                <span class="label">Youtube</span>
+              </a>
+            </li>
           </ul>
         </header>
 
@@ -53,7 +71,9 @@
                   </li>
                   <li>
                     <ul>
-                      <li><a href="https://drive.google.com/open?id=0B2sfYBZUThrEU0VBdWRja24zMEk" target="_blank">PTC Strengthening</a></li>
+                      <li>
+                        <a href="https://drive.google.com/open?id=0B2sfYBZUThrEU0VBdWRja24zMEk" target="_blank">PTC Strengthening</a>
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -65,8 +85,12 @@
                   </li>
                   <li>
                     <ul>
-                      <li><a href="https://drive.google.com/open?id=0B2sfYBZUThrET1NrYktTM1RoSGs" target="_blank">ชื่อยาภาษาไทย</a></li>
-                      <li><a href="#">ฉลากยาเสริม และข้อมูลความปลอดภัย</a></li>
+                      <li>
+                        <a href="https://drive.google.com/open?id=0B2sfYBZUThrET1NrYktTM1RoSGs" target="_blank">ชื่อยาภาษาไทย</a>
+                      </li>
+                      <li>
+                        <a href="#modal-drug-label">ฉลากยาเสริม และข้อมูลความปลอดภัย</a>
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -78,8 +102,12 @@
                   </li>
                   <li>
                     <ul>
-                      <li><a href="https://drive.google.com/open?id=0B2gmmbfSfWtlNkxVRU03SzRpbFE" target="_blnk">Responsible Use of Antibiotics</a></li>
-                      <li><a href="#">Non-Communicable Diseases</a></li>
+                      <li>
+                        <a href="https://drive.google.com/open?id=0B2gmmbfSfWtlNkxVRU03SzRpbFE" target="_blnk">Responsible Use of Antibiotics</a>
+                      </li>
+                      <li>
+                        <a href="#">Non-Communicable Diseases</a>
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -91,9 +119,15 @@
                   </li>
                   <li>
                     <ul>
-                      <li><a href="https://www.fda.gov/Safety/MedWatch/" target="_blank">ข่าวสารปัญหาการใช้ยา </a></li>
-                      <li><a href="/news">สาระ-ปัญหาการใช้ยา </a></li>
-                      <li><a href="#">สถิติ ข้อมูลการใช้ยาในประเทศไทย</a></li>
+                      <li>
+                        <a href="https://www.fda.gov/Safety/MedWatch/" target="_blank">ข่าวสารปัญหาการใช้ยา </a>
+                      </li>
+                      <li>
+                        <a href="/news">สาระ-ปัญหาการใช้ยา </a>
+                      </li>
+                      <li>
+                        <a href="#">สถิติ ข้อมูลการใช้ยาในประเทศไทย</a>
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -105,12 +139,24 @@
                   </li>
                   <li>
                     <ul>
-                      <li><a href="/images/media/1.jpg" target="_blank">ยาที่พึงระวังในเด็ก</a></li>
-                      <li><a href="/images/media/2.jpg" target="_blank">ยาที่พึงระวังในผู้สูงอายุ</a></li>
-                      <li><a href="/images/media/3.jpg" target="_blank">ยาที่พึงระวังในผู้ป่วยตั้งครรภ์</a></li>
-                      <li><a href="/images/media/4.jpg" target="_blank">ยาที่พึงระวังในผู้ป่วยให้นมบุตร</a></li>
-                      <li><a href="/images/media/5.jpg" target="_blank">ยาที่พึงระวังในผู้ป่วยโรคตับ</a></li>
-                      <li><a href="/images/media/6.jpg" target="_blank">ยาที่พึงระวังในผู้ป่วยโรคไต</a></li>
+                      <li>
+                        <a href="/images/media/1.jpg" target="_blank">ยาที่พึงระวังในเด็ก</a>
+                      </li>
+                      <li>
+                        <a href="/images/media/2.jpg" target="_blank">ยาที่พึงระวังในผู้สูงอายุ</a>
+                      </li>
+                      <li>
+                        <a href="/images/media/3.jpg" target="_blank">ยาที่พึงระวังในผู้ป่วยตั้งครรภ์</a>
+                      </li>
+                      <li>
+                        <a href="/images/media/4.jpg" target="_blank">ยาที่พึงระวังในผู้ป่วยให้นมบุตร</a>
+                      </li>
+                      <li>
+                        <a href="/images/media/5.jpg" target="_blank">ยาที่พึงระวังในผู้ป่วยโรคตับ</a>
+                      </li>
+                      <li>
+                        <a href="/images/media/6.jpg" target="_blank">ยาที่พึงระวังในผู้ป่วยโรคไต</a>
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -122,9 +168,15 @@
                   </li>
                   <li>
                     <ul>
-                      <li><a href="https://drive.google.com/file/d/0B2sfYBZUThrEOGtQMmFDVVk0YW8/view?usp=sharing" target="_blank">เกณฑ์จริยธรรมว่าด้วยการส่งเสริมการขายยาของประเทศไทย พ.ศ. ๒๕๕๙</a></li>
-                      <li><a href="#">แนวปฏิบัติตามเกณฑ์จริยธรรมฯ สำหรับบุคลากรในสถานพยาบาล</a></li>
-                      <li><a href="#">ระบบการเฝ้าระวัง ร้องเรียน และรายงาน ธรรมาภิบาลว่าด้วยการส่งเสริมการขายยา</a></li>
+                      <li>
+                        <a href="https://drive.google.com/file/d/0B2sfYBZUThrEOGtQMmFDVVk0YW8/view?usp=sharing" target="_blank">เกณฑ์จริยธรรมว่าด้วยการส่งเสริมการขายยาของประเทศไทย พ.ศ. ๒๕๕๙</a>
+                      </li>
+                      <li>
+                        <a href="#">แนวปฏิบัติตามเกณฑ์จริยธรรมฯ สำหรับบุคลากรในสถานพยาบาล</a>
+                      </li>
+                      <li>
+                        <a href="#">ระบบการเฝ้าระวัง ร้องเรียน และรายงาน ธรรมาภิบาลว่าด้วยการส่งเสริมการขายยา</a>
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -134,6 +186,165 @@
 
         </section>
 
+      </div>
+      <!-- modal -->
+      <div id="modal">
+        <dialog class="modal modal-overlay" id="modal-drug-label">
+          <a href="#" class="btn-close">
+            <i class="fa fa-times-circle fa-3x" aria-hidden="true"></i>
+          </a>
+          <h3>โรงพยาบาลส่งเสริมการใช้ยาอย่างสมเหตุผล</h3>
+          <div class="box only-small">
+            <div class="row uniform">
+              <div class="9u">
+                <input type="text" id="searchDrugLabelMini" name="searchDrugLabel" placeholder="ค้นหาชื่อยา">
+              </div>
+              <div class="3u$">
+                <a href="#" class="button fit special icon fa-trash-o btn-clear">
+                </a>
+              </div>
+              <!-- <div class="12u$">
+                <input type="radio" id="search-type-label-mini" name="search-type-mini" checked>
+                <label for="search-type-label-mini">ค้นหาชื่อยา</label>
+              </div>
+              <div class="12u$">
+                <input type="radio" id="search-type-group-mini" name="search-type-mini">
+                <label for="search-type-group-mini">ค้นหาจากกลุ่มยา</label>
+              </div> -->
+            </div>
+          </div>
+          <div class="row ">
+            <div class="9u 8u(large) 12u$(small)">
+              <div class="box">
+                <input type="hidden" id="orderId">
+                <input type="hidden" id="atcCode">
+                <div class="row uniform">
+                  <div class="4u 12u$(xsmall)">
+                    <span>ชื่อยา</span>
+                    <input type="text" id="drugNameThai" placeholder="ชื่อยา" />
+                  </div>
+                  <div class="4u 12u$(xsmall)">
+                    <span class="not-xsmall">&nbsp;</span>
+                    <input type="text" id="drugNameEng" placeholder="Generic Drug Name" />
+                  </div>
+                  <div class="4u$ 12u$(xsmall)">
+                    <span>รูปแบบยา</span>
+                    <input type="text" id="drugType" placeholder="รูปแบบยา" />
+                  </div>
+                  <!-- Break -->
+                  <div class="4u 12u$(xsmall)">
+                    <span>กลุ่มยา</span>
+                    <input type="text" id="groupNameThai" placeholder="กลุ่มยา (ไทย)" />
+                  </div>
+                  <div class="4u 12u$(xsmall)">
+                    <span class="not-xsmall">&nbsp;</span>
+                    <input type="text" id="groupNameEng" placeholder="NLEM Code level 2" />
+                  </div>
+                  <div class="4u$ 12u$(xsmall)">
+                    <span class="not-xsmall">&nbsp;</span>
+                  </div>
+                  <!-- Break -->
+                  <div class="12u$">
+                    <span>ข้อบ่งใช้</span>
+                    <input type="text" id="termsOfUse1" placeholder="ข้อบ่งใช้-1" />
+                  </div>
+                  <!-- Break -->
+                  <div class="12u$">
+                    <input type="text" id="termsOfUse2" placeholder="ข้อบ่งใช้-2" />
+                  </div>
+                  <!-- Break -->
+                  <div class="12u$">
+                    <input type="text" id="termsOfUse3" placeholder="ข้อบ่งใช้-3" />
+                  </div>
+                  <!-- Break -->
+                  <div class="12u$">
+                    <span>คำแนะนำในการใช้ยา</span>
+                    <input type="text" id="instructionsForUse1" placeholder="คำแนะนำในการใช้ยา-1" />
+                  </div>
+                  <!-- Break -->
+                  <div class="12u$">
+                    <input type="text" id="instructionsForUse2" placeholder="คำแนะนำในการใช้ยา-2" />
+                  </div>
+                  <!-- Break -->
+                  <div class="12u$">
+                    <input type="text" id="instructionsForUse3" placeholder="คำแนะนำในการใช้ยา-3" />
+                  </div>
+                  <!-- Break -->
+                  <div class="12u$">
+                    <span>อาการไม่พึงประสงค์</span>
+                    <input type="text" id="adverseEffects1" placeholder="อาการไม่พึงประสงค์-1" />
+                  </div>
+                  <!-- Break -->
+                  <div class="12u$">
+                    <input type="text" id="adverseEffects2" placeholder="อาการไม่พึงประสงค์-2" />
+                  </div>
+                  <!-- Break -->
+                  <div class="12u$">
+                    <input type="text" id="adverseEffects3" placeholder="อาการไม่พึงประสงค์-3" />
+                  </div>
+                  <!-- Break -->
+                  <div class="12u$">
+                    <span>ข้อห้ามใช้</span>
+                    <input type="text" id="contraindication1" placeholder="ข้อห้ามใช้-1" />
+                  </div>
+                  <!-- Break -->
+                  <div class="12u$">
+                    <input type="text" id="contraindication2" placeholder="ข้อห้ามใช้-2" />
+                  </div>
+                  <!-- Break -->
+                  <div class="12u$">
+                    <input type="text" id="contraindication3" placeholder="ข้อห้ามใช้-3" />
+                  </div>
+                  <!-- Break -->
+                  <div class="12u$">
+                    <span>ข้อควรระวังในการใช้ยา</span>
+                    <input type="text" id="medicationPrecautions1" placeholder="ข้อควรระวังในการใช้ยา-1" />
+                  </div>
+                  <!-- Break -->
+                  <div class="12u$">
+                    <input type="text" id="medicationPrecautions2" placeholder="ข้อควรระวังในการใช้ยา-2" />
+                  </div>
+                  <!-- Break -->
+                  <div class="12u$">
+                    <input type="text" id="medicationPrecautions3" placeholder="ข้อควรระวังในการใช้ยา-3" />
+                  </div>
+                  <!-- Break -->
+                  <div class="6u 12u$(xsmall)">
+                    <span>ข้อระวังการใช้ร่วมกับยาอื่น</span>
+                    <input type="text" id="combinationOtherDrugs" placeholder="ข้อระวังการใช้ร่วมกับยาอื่น" />
+                  </div>
+                  <div class="6u$ 12u$(xsmall)">
+                    <span>การเก็บรักษายา</span>
+                    <input type="text" id="drugStorage" placeholder="การเก็บรักษายา" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="3u$ 4u$(large) not-small">
+              <div class="box">
+                <div class="row uniform">
+                  <div class="9u">
+                    <span>&nbsp;</span>
+                    <input type="text" id="searchDrugLabel" name="searchDrugLabel" placeholder="ค้นหาชื่อยา">
+                  </div>
+                  <div class="3u$">
+                    <span>&nbsp;</span>
+                    <a href="#" class="button fit special icon fa-trash-o btn-clear">
+                    </a>
+                  </div>
+                  <!-- <div class="12u$">
+                    <input type="radio" id="search-type-label" name="search-type" checked>
+                    <label for="search-type-label">ค้นหาชื่อยา</label>
+                  </div>
+                  <div class="12u$">
+                    <input type="radio" id="search-type-group" name="search-type">
+                    <label for="search-type-group">ค้นหาจากกลุ่มยา</label>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </dialog>
       </div>
     </div>
 
@@ -147,41 +358,81 @@
             <img src="images/logo.png" />
           </div>
           <ul>
-            <li><a href="/">
-          <i class="fa fa-hospital-o" aria-hidden="true"></i>
-          หน้าหลัก</a></li>
             <li>
-              <span class="opener"><i class="fa fa-hand-peace-o" aria-hidden="true"></i>โครงการ RDU Hospital</span>
-              <ul>
-                <li><a href="/aboutus">รู้จักเรา</a></li>
-                <li><a href="/history">ประวัติความเป็นมา</a></li>
-                <li><a href="/please">กุญแจ PLEASE</a></li>
-                <li><a href="http://drug.fda.moph.go.th:81/nlem.in.th/sites/default/files/attachments/rdu_book_proof_13.pdf"
-                    target="_blank">คู่มือการดำเนินการโครงการฯ</a></li>
-                <li><a href="/performance">สถิติ ผลการดำเนินการโครงการฯ</a></li>
-              </ul>
-            </li>
-            <li class="active"><a href="/toward"><i class="fa fa-road" aria-hidden="true"></i>มุ่งสู่ RDU Hospital</a></li>
-            <li>
-              <span class="opener"><i class="fa fa-book" aria-hidden="true"></i>RDU Education</span>
-              <ul>
-                <li><a href="https://drive.google.com/open?id=0B2gmmbfSfWtlbjBNUGl2bmNTZlk" target="_blank">RDU Curriculum 2017</a></li>
-                <li><a href="/instructional">เอกสารประกอบการเรียนการสอน</a></li>
-                <li><a href="/elearning">E-learning</a></li>
-              </ul>
+              <a href="/">
+                <i class="fa fa-hospital-o" aria-hidden="true"></i>
+                หน้าหลัก</a>
             </li>
             <li>
-              <span class="opener"><i class="fa fa-film" aria-hidden="true"></i>สื่อเผยแพร่</span>
+              <span class="opener">
+                <i class="fa fa-hand-peace-o" aria-hidden="true"></i>โครงการ RDU Hospital</span>
               <ul>
-                <li><a href="/documents">เอกสารทั่วไป สำหรับประชาชน</a></li>
-                <li><a href="/video">วิดีโอ</a></li>
-                <li><a href="/application">RDU รู้เรื่องยา Application</a></li>
-                <li><a href="/other">อื่นๆ</a></li>
+                <li>
+                  <a href="/aboutus">รู้จักเรา</a>
+                </li>
+                <li>
+                  <a href="/history">ประวัติความเป็นมา</a>
+                </li>
+                <li>
+                  <a href="/please">กุญแจ PLEASE</a>
+                </li>
+                <li>
+                  <a href="http://drug.fda.moph.go.th:81/nlem.in.th/sites/default/files/attachments/rdu_book_proof_13.pdf" target="_blank">คู่มือการดำเนินการโครงการฯ</a>
+                </li>
+                <li>
+                  <a href="/performance">สถิติ ผลการดำเนินการโครงการฯ</a>
+                </li>
               </ul>
             </li>
-            <li><a href="/news"><i class="fa fa-rss" aria-hidden="true"></i>ข่าวและกิจกรรม</a></li>
-            <li><a href="/committee"><i class="fa fa-users" aria-hidden="true"></i>สำหรับคณะทำงาน</a></li>
-            <li><a href="/contactus"><i class="fa fa-envelope-o" aria-hidden="true"></i>ติดต่อเรา</a></li>
+            <li class="active">
+              <a href="/toward">
+                <i class="fa fa-road" aria-hidden="true"></i>มุ่งสู่ RDU Hospital</a>
+            </li>
+            <li>
+              <span class="opener">
+                <i class="fa fa-book" aria-hidden="true"></i>RDU Education</span>
+              <ul>
+                <li>
+                  <a href="https://drive.google.com/open?id=0B2gmmbfSfWtlbjBNUGl2bmNTZlk" target="_blank">RDU Curriculum 2017</a>
+                </li>
+                <li>
+                  <a href="/instructional">เอกสารประกอบการเรียนการสอน</a>
+                </li>
+                <li>
+                  <a href="/elearning">E-learning</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="opener">
+                <i class="fa fa-film" aria-hidden="true"></i>สื่อเผยแพร่</span>
+              <ul>
+                <li>
+                  <a href="/documents">เอกสารทั่วไป สำหรับประชาชน</a>
+                </li>
+                <li>
+                  <a href="/video">วิดีโอ</a>
+                </li>
+                <li>
+                  <a href="/application">RDU รู้เรื่องยา Application</a>
+                </li>
+                <li>
+                  <a href="/other">อื่นๆ</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/news">
+                <i class="fa fa-rss" aria-hidden="true"></i>ข่าวและกิจกรรม</a>
+            </li>
+            <li>
+              <a href="/committee">
+                <i class="fa fa-users" aria-hidden="true"></i>สำหรับคณะทำงาน</a>
+            </li>
+            <li>
+              <a href="/contactus">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>ติดต่อเรา</a>
+            </li>
           </ul>
         </nav>
         <!-- Footer -->
@@ -195,9 +446,11 @@
 
   <!-- Scripts -->
   <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.autocomplete.min.js"></script>
   <script src="js/skel.min.js"></script>
   <script src="js/util.js"></script>
   <!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
+  <script src="js/toward.js"></script>
   <script src="js/main.js"></script>
 
 </body>

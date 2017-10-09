@@ -2,6 +2,7 @@ import * as Hapi from "hapi";
 import * as Boom from "boom";
 import { IPlugin } from "./plugins/interfaces";
 import { IServerConfigurations } from "./configurations";
+import * as Label from "./label";
 import * as Tasks from "./tasks";
 import * as Users from "./users";
 import * as Contents from "./contents";
@@ -45,6 +46,7 @@ export function init(configs: IServerConfigurations, database: IDatabase): Promi
             console.log('All plugins registered successfully.');
 
             console.log('Register Routes');
+            Label.init(server, configs, database);
             Tasks.init(server, configs, database);
             Users.init(server, configs, database);
             Contents.init(server, configs);

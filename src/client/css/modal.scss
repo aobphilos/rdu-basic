@@ -1,0 +1,70 @@
+/* Modal */
+
+#modal {
+  .modal {
+    bottom: 100%;
+    height: 100%;
+    left: -100%;
+    max-height: 100%;
+    opacity: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    position: fixed;
+    visibility: hidden;
+    width: 100%;
+    z-index: 11000;
+    -webkit-transition: opacity 0.3s ease-in-out, bottom 0s 0.3s, left 0s 0.3s, visibility 0s 0.3s;
+    -moz-transition: opacity 0.3s ease-in-out, bottom 0s 0.3s, left 0s 0.3s, visibility 0s 0.3s;
+    -o-transition: opacity 0.3s ease-in-out, bottom 0s 0.3s, left 0s 0.3s, visibility 0s 0.3s;
+    transition: opacity 0.3s ease-in-out, bottom 0s 0.3s, left 0s 0.3s, visibility 0s 0.3s;
+  }
+  .box {
+    border: solid 1px rgba(198, 209, 214, 0.75)
+  }
+  .btn-close {
+    color: inherit;
+    font-size: 10px;
+    letter-spacing: .3em;
+    position: absolute;
+    right: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    top: 10px;
+    border: none;
+  }
+  #modal-drug-label:target {
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.6s ease-in-out;
+    -moz-transition: opacity 0.6s ease-in-out;
+    -o-transition: opacity 0.6s ease-in-out;
+    transition: opacity 0.6s ease-in-out;
+  }
+  dialog {
+    display: block;
+  }
+  code {
+    display: block;
+    letter-spacing: 0;
+    line-height: 1.3;
+    &+code {
+      margin-top: 5px;
+    }
+  }
+  .modal-overlay {
+    background-color: rgb(240, 218, 220);
+    padding: 3em 5%;
+    h2 {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+  .icon:before{
+    position: absolute;
+    left: 44%;
+    font-size: 20px;
+  }
+
+}
