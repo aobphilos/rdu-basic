@@ -1,13 +1,13 @@
 import * as Hapi from "hapi";
 import * as Boom from "boom";
 import { IDatabase } from "../database";
-import { IServerConfigurations } from "../configurations";
+import { IEmailConfiguration } from "../configurations";
 
 export default class ContentController {
 
-    private configs: IServerConfigurations;
+    private configs: IEmailConfiguration;
 
-    constructor(configs: IServerConfigurations) {
+    constructor(configs: IEmailConfiguration) {
         this.configs = configs;
     }
 
@@ -85,5 +85,12 @@ export default class ContentController {
 
     public async contactus(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
         return reply.file("contactus.html");
+    }
+
+    public async sendMailToUs(request: Hapi.Request, reply: Hapi.ReplyNoContinue, mail: any) {
+        return mail.send(this.configs)
+            .then((response) => {
+                return reply({ sucess: true });
+            });
     }
 }

@@ -25,6 +25,10 @@ export default (): IPlugin => {
                                 {
                                     'name': 'users',
                                     'description': 'Api users interface.'
+                                },
+                                {
+                                    'name': 'label',
+                                    'description': 'Api label interface.'
                                 }
                             ],
                             swaggerUI: true,

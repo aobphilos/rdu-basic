@@ -1,13 +1,18 @@
 import * as Hapi from "hapi";
 import * as Joi from "joi";
 import ContentController from "./content-controller";
-import { IServerConfigurations } from "../configurations";
+import { IEmailConfiguration } from "../configurations";
 
-export default function (server: Hapi.Server, configs: IServerConfigurations) {
+export default function (server: Hapi.Server, configs: IEmailConfiguration) {
 
+    // Config Static Path
     const context = new ContentController(configs);
     server.bind(context);
     server.path(__dirname + '/../client');
+
+    // Config Sendgrid API-Key
+    const mail = require('@sendgrid/mail');
+    mail.setApiKey(process.env.SENDGRID_API_KEY);
 
     server.register(
         [require('inert')],
@@ -102,6 +107,13 @@ export default function (server: Hapi.Server, configs: IServerConfigurations) {
                         method: 'GET',
                         path: '/contactus',
                         handler: context.contactus
+                    },
+                    {
+                        method: 'POST',
+                        path: '/contactus',
+                        handler: function (request, reply) {
+                            return context.sendMailToUs(request, reply, mail);
+                        }
                     }
                 ]);
 
