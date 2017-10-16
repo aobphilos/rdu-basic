@@ -105,10 +105,10 @@ export default class ContentController {
         return this.emailService
             .send(emailForm)
             .then((response) => {
-                return reply({ sucess: true });
+                return reply({ success: true });
             })
-            .fail((err) => {
-                return reply({ sucess: false, error: err });
+            .catch((err) => {
+                return reply({ success: false, error: err });
             });
     }
 }

@@ -115,10 +115,10 @@ export default function (server: Hapi.Server, configs: IServerConfigurations, em
                             handler: context.sendMailToUs,
                             validate: {
                                 payload: Joi.object().keys({
-                                    name: Joi.string().trim().required(),
-                                    email: Joi.string().email().trim().required(),
-                                    subject: Joi.string().trim().required(),
-                                    message: Joi.string().required(),
+                                    "name": Joi.string().trim().required(),
+                                    "email": Joi.string().email().trim().required(),
+                                    "subject": Joi.string().trim().required(),
+                                    "message": Joi.string().required(),
                                     "g-recaptcha-response": Joi.string().required()
                                 })
                             }

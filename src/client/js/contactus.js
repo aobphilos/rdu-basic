@@ -66,20 +66,24 @@ $(function () {
 
   $form.on('submit', function (e) {
     e.preventDefault();
-
     if (checkValidForm()) {
+      $submit.addClass("disabled");
       $.ajax({
           method: "POST",
           url: "/contactus",
           data: getAllParams()
         })
         .done(function (result) {
-          console.log('after post: ', result);
-          alert("Thank you.");
+          if (result && result.success) {
+            alert("Thank you.");
+          }
           $reset.trigger("click");
         })
-        .fail(function(err){
-          console.log('error after post', err);
+        .fail(function (err) {
+          console.log('error: ', err);
+        })
+        .always(function () {
+          $submit.removeClass("disabled");
         });
     }
 
