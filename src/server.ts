@@ -49,7 +49,7 @@ export function init(configs: IServerConfigurations, database: IDatabase, emailC
             Label.init(server, configs, database);
             Tasks.init(server, configs, database);
             Users.init(server, configs, database);
-            Contents.init(server, emailConfig);
+            Contents.init(server, configs, emailConfig);
             console.log('Routes registered sucessfully.');
 
             resolve(server);

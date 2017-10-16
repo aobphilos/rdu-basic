@@ -1,18 +1,18 @@
 import * as Hapi from "hapi";
 import * as Joi from "joi";
 import ContentController from "./content-controller";
-import { IEmailConfiguration } from "../configurations";
+import { IServerConfigurations, IEmailConfiguration } from "../configurations";
 
-export default function (server: Hapi.Server, configs: IEmailConfiguration) {
-
-    // Config Static Path
-    const context = new ContentController(configs);
-    server.bind(context);
-    server.path(__dirname + '/../client');
+export default function (server: Hapi.Server, configs: IServerConfigurations, emailConfigs: IEmailConfiguration) {
 
     // Config Sendgrid API-Key
-    const mail = require('@sendgrid/mail');
-    mail.setApiKey(process.env.SENDGRID_API_KEY);
+    const emailService = require('@sendgrid/mail');
+    emailService.setApiKey(process.env.SENDGRID_API_KEY);
+
+    // Config Static Path
+    const context = new ContentController(configs, emailConfigs, emailService);
+    server.bind(context);
+    server.path(__dirname + '/../client');
 
     server.register(
         [require('inert')],
@@ -111,8 +111,17 @@ export default function (server: Hapi.Server, configs: IEmailConfiguration) {
                     {
                         method: 'POST',
                         path: '/contactus',
-                        handler: function (request, reply) {
-                            return context.sendMailToUs(request, reply, mail);
+                        config: {
+                            handler: context.sendMailToUs,
+                            validate: {
+                                payload: Joi.object().keys({
+                                    name: Joi.string().trim().required(),
+                                    email: Joi.string().email().trim().required(),
+                                    subject: Joi.string().trim().required(),
+                                    message: Joi.string().required(),
+                                    "g-recaptcha-response": Joi.string().required()
+                                })
+                            }
                         }
                     }
                 ]);

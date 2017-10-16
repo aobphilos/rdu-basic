@@ -19,6 +19,7 @@
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -57,33 +58,37 @@
         </header>
 
         <!-- Content -->
-        <section>
+        <section id="contactus">
           <!-- Box -->
           <div class="row">
             <div class="8u$ -2u 10u$(small) -1u(small) 12u$(xsmall)">
               <div class="box">
                 <h3>ติดต่อเรา</h3>
-                <form method="post" action="/contactus">
+                <form id="messageForm" method="post" action="/contactus">
                   <div class="row uniform">
                     <div class="6u 12u$(xsmall)">
-                      <input type="text" name="name" id="name" value="" placeholder="ชื่อ" />
+                      <input type="text" name="name" id="name" value="" placeholder="ชื่อ" class="field" />
                     </div>
                     <div class="6u$ 12u$(xsmall)">
-                      <input type="email" name="email" id="email" value="" placeholder="อีเมล์" />
+                      <input type="email" name="email" id="email" value="" placeholder="อีเมล์" class="field" />
                     </div>
                     <!-- Break -->
                     <div class="12u$">
-                      <input type="text" name="subject" id="subject" value="" placeholder="หัวข้อ" />
+                      <input type="text" name="subject" id="subject" value="" placeholder="หัวข้อ" class="field" />
                     </div>
                     <!-- Break -->
                     <div class="12u$">
-                      <textarea name="message" id="message" placeholder="ระบุข้อความ" rows="6"></textarea>
+                      <textarea name="message" id="message" placeholder="ระบุข้อความ" rows="6" class="field"></textarea>
                     </div>
                     <!-- Break -->
+                    <div class="12u$">
+                      <div class="g-recaptcha small" id="contact-recaptcha" data-sitekey="6LeYeTQUAAAAAKXgfbdViFVuoR-s0FMH7FGbccLo" data-callback="onCaptchaCallback"
+                        data-expired-callback=""></div>
+                    </div>
                     <div class="12u$">
                       <ul class="actions">
                         <li>
-                          <input type="submit" value="ส่งข้อความ" class="special" />
+                          <input type="submit" value="ส่งข้อความ" class="special disabled" />
                         </li>
                         <li>
                           <input type="reset" value="ล้างข้อความ" />
@@ -198,10 +203,13 @@
 
   <!-- Scripts -->
   <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/additional-methods.min.js"></script>
   <script src="js/skel.min.js"></script>
   <script src="js/util.js"></script>
   <!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
   <script src="js/main.js"></script>
+  <script src="js/contactus.js"></script>
 
 </body>
 
