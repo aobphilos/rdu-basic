@@ -1,14 +1,19 @@
 import * as Hapi from "hapi";
 import * as Boom from "boom";
 import { IDatabase } from "../database";
-import { IServerConfigurations } from "../configurations";
+import { IServerConfigurations, IEmailConfiguration } from "../configurations";
+import { IContact } from "./contact";
 
 export default class ContentController {
 
     private configs: IServerConfigurations;
+    private emailConfigs: IEmailConfiguration;
+    private emailService: any;
 
-    constructor(configs: IServerConfigurations) {
+    constructor(configs: IServerConfigurations, emailconfigs: IEmailConfiguration, emailservice: any) {
         this.configs = configs;
+        this.emailConfigs = emailconfigs;
+        this.emailService = emailservice;
     }
 
     public async postHandler(request: Hapi.Request, reply: Hapi.ReplyWithContinue) {
@@ -85,5 +90,25 @@ export default class ContentController {
 
     public async contactus(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
         return reply.file("contactus.html");
+    }
+
+    public async sendMailToUs(request: Hapi.Request, reply: Hapi.ReplyNoContinue) {
+        const contact: IContact = request.payload;
+        const { to, from, subject, html, text } = this.emailConfigs;
+        let emailForm = {
+            to: to,
+            from: contact.email,
+            subject: contact.subject,
+            html: "<strong>" + contact.message + "</strong>"
+        };
+
+        return this.emailService
+            .send(emailForm)
+            .then((response) => {
+                return reply({ success: true });
+            })
+            .catch((err) => {
+                return reply({ success: false, error: err });
+            });
     }
 }

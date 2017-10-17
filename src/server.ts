@@ -1,7 +1,7 @@
 import * as Hapi from "hapi";
 import * as Boom from "boom";
 import { IPlugin } from "./plugins/interfaces";
-import { IServerConfigurations } from "./configurations";
+import { IServerConfigurations, IEmailConfiguration } from "./configurations";
 import * as Label from "./label";
 import * as Tasks from "./tasks";
 import * as Users from "./users";
@@ -9,7 +9,7 @@ import * as Contents from "./contents";
 import { IDatabase } from "./database";
 
 
-export function init(configs: IServerConfigurations, database: IDatabase): Promise<Hapi.Server> {
+export function init(configs: IServerConfigurations, database: IDatabase, emailConfig: IEmailConfiguration): Promise<Hapi.Server> {
 
     return new Promise<Hapi.Server>(resolve => {
 
@@ -49,7 +49,7 @@ export function init(configs: IServerConfigurations, database: IDatabase): Promi
             Label.init(server, configs, database);
             Tasks.init(server, configs, database);
             Users.init(server, configs, database);
-            Contents.init(server, configs);
+            Contents.init(server, configs, emailConfig);
             console.log('Routes registered sucessfully.');
 
             resolve(server);

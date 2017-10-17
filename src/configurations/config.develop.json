@@ -1,16 +1,23 @@
 {
-    "database": {
-        "connectionString": "mongodb://localhost:27017/rdu-db-dev"
-    },
-    "server": {
-        "port": 5000,
-        "jwtSecret": "random-secret-password",
-        "jwtExpiration": "12h",
-        "routePrefix": "",
-        "plugins": [
-            "logger",
-            "jwt-auth",
-            "swagger"
-        ]
-    }
+  "database": {
+    "connectionString": "mongodb://localhost:27017/rdu-db-dev"
+  },
+  "server": {
+    "port": 5000,
+    "jwtSecret": "random-secret-password",
+    "jwtExpiration": "12h",
+    "routePrefix": "",
+    "plugins": [
+      "logger",
+      "jwt-auth",
+      "swagger"
+    ]
+  },
+  "email": {
+    "to": "rduhos@gmail.com",
+    "from": "noreply@rduthai.com",
+    "subject": "Contact From Website RDUThai.com",
+    "text": "",
+    "html": ""
+  }
 }

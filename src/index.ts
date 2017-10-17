@@ -21,8 +21,10 @@ const database = Database.init(dbConfigs);
 // Starting Application Server
 const serverConfigs = Configs.getServerConfigs();
 
+// Get Email Template
+const emailConfigs = Configs.getEmailConfigs();
 
-Server.init(serverConfigs, database).then((server) => {
+Server.init(serverConfigs, database, emailConfigs).then((server) => {
     server.start(() => {
         console.log('Server running at:', server.info.uri);
     });

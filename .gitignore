@@ -37,3 +37,4 @@ build
 #Ignore typings
 typings
 
+sendgrid.env

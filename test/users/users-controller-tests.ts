@@ -10,13 +10,14 @@ const configDb = Configs.getDatabaseConfig();
 const database = Database.init(configDb);
 const assert = chai.assert;
 const serverConfig = Configs.getServerConfigs();
+const emailConfig = Configs.getEmailConfigs();
 
 describe("UserController Tests", () => {
 
     let server;
 
     before((done) => {
-        Server.init(serverConfig, database).then((s) => {
+        Server.init(serverConfig, database, emailConfig).then((s) => {
             server = s;
             done();
         });

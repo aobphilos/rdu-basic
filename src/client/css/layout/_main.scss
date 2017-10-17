@@ -57,11 +57,17 @@
       height: 340px;
     }
   }
+  #contactus {
+    label.error {
+      color: rgb(245, 49, 49);
+      font-style: italic;
+    }
+  }
   @include breakpoint(xlarge) {
     >.inner {
-      @include padding(0, 5em);
+      @include padding(0, 3em);
       >section {
-        @include padding(5em, 0);
+        @include padding(3em, 0);
       }
     }
     #media {
@@ -82,9 +88,9 @@
   }
   @include breakpoint(large) {
     >.inner {
-      @include padding(0, 4em);
+      @include padding(0, 2em);
       >section {
-        @include padding(4em, 0);
+        @include padding(2em, 0);
       }
     }
     #media {
@@ -105,9 +111,9 @@
   }
   @include breakpoint(small) {
     >.inner {
-      @include padding(0, 2em);
+      @include padding(0, 1em);
       >section {
-        @include padding(3em, 0);
+        @include padding(1em, 0);
       }
     }
     #media {
